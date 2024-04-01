@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y vim.tiny gcc g++ wget bzip2 make python
     useradd -d /var/slurm -r -u 600 -U slurm && \
     mkdir /var/slurm && chown slurm:slurm /var/slurm && \
     mkdir /etc/slurm && mkdir /run/munge && mkdir /locate && \
-    mkdir -p /service/slurmctld && mkdir -p /service/slurmd && \
+    mkdir -p /run/sshd && \
     wget https://download.open-mpi.org/release/open-mpi/v$ompi_version_major/openmpi-$ompi_version_minor.tar.bz2 && \
     tar -xjf openmpi-$ompi_version_minor.tar.bz2 && \
     useradd -s /bin/bash user && mkdir /home/user && chown user:user /home/user && chmod 750 /home/user && \
