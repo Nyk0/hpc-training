@@ -1,0 +1,9 @@
+services:
+  frontend:
+    image: slurm:latest
+    hostname: frontend
+    volumes:
+      - home_user:/home/user
+
+volumes:
+  home_user:
