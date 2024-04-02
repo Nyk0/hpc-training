@@ -5,6 +5,24 @@ services:
     command: /sbin/sshd -D
     volumes:
       - home_user:/home/user
+  slurmctld:
+    image: slurm:latest
+    hostname: slurmctld
+    command: /usr/local/sbin/slurmctld -D -f /etc/slurm/slurm.conf
+    volumes:
+      - home_user:/home/user
+  magi1:
+    image: slurm:latest
+    hostname: magi1
+    command: /usr/local/sbin/slurmd -D -f /etc/slurm/slurm.conf
+    volumes:
+      - home_user:/home/user
+  magi2:
+    image: slurm:latest
+    hostname: magi2
+    command: /usr/local/sbin/slurmd -D -f /etc/slurm/slurm.conf
+    volumes:
+      - home_user:/home/user
 
 volumes:
   home_user:
